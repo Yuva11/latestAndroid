@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preference_values">
+        <item>Sort by Distance</item>
+        <item>Sort by Price</item>
+        <item>Sort by Brands</item>
+        <item>Most Ordered</item>
+        <item>Most Shared</item>
+        <item>Most Liked</item>
+        <item>Most Viewed</item>
+    </string-array>
+</resources>

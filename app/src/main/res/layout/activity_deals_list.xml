@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deal_list_page_bg_color">
+
+    <!-- Used Toolbar instead of ActionBar for more flexibility -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ListView
+        android:id="@+id/deals_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10sp">
+    </ListView>
+
+    <!-- API call retry segment -->
+    <include layout="@layout/retry_connection_layout"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"/>
+
+    <!-- No Data Result -->
+    <include layout="@layout/no_data_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+
+    <!-- Guide layout -->
+    <RelativeLayout
+        android:id="@+id/guide_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/guide_deal_list" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="guildeLayoutOkClicked"
+            android:padding="16dp"
+            android:text="OK" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

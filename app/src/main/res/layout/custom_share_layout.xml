@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap &amp; share with your friends to earn"
+        android:padding="10dp"
+        android:gravity="center_horizontal"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/fb_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/referral_fb"
+            android:onClick="facebookShareClicked"/>
+
+        <Button
+            android:id="@+id/whatsapp_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/referral_whatsapp"
+            android:onClick="whatsappShareClicked"/>
+
+        <Button
+            android:id="@+id/email_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/referral_email"
+            android:onClick="emailShareClicked"/>
+
+        <Button
+            android:id="@+id/others_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/referral_others"
+            android:onClick="othersShareClicked"/>
+
+    </LinearLayout>
+
+</LinearLayout>

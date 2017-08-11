@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F6F6F6"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/dish_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Some Pasta Salad"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dish_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dish_title"
+            android:layout_marginTop="4dp"
+            android:text="Rs 100" />
+
+        <TextView
+            android:id="@+id/deal_qty1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_qty_bg"
+            android:text="1"
+            android:layout_marginRight="6dp"
+            android:textColor="#ffffff"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/stepper1"
+            android:layout_toStartOf="@+id/stepper1" />
+
+        <LinearLayout
+            android:id="@+id/stepper1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="57dp"
+                android:layout_height="30dp"
+                android:background="@drawable/stepper_down"
+                android:onClick="stepDownCounterClicked" />
+
+
+            <Button
+                android:layout_width="57dp"
+                android:layout_height="30dp"
+                android:background="@drawable/stepper_up"
+                android:onClick="stepUpCounterClicked" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

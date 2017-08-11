@@ -1,0 +1,677 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context="hungrybells.com.hungrybells_v20.Activity.activity.OrderDetailsActivity">
+
+    <!-- Used Toolbar instead of ActionBar for more flexibility -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="100">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Order details -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#2C4F66"
+                        android:gravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="Payment Method - Online payment"
+                        android:textAlignment="center"
+                        android:textColor="@color/color_white" />
+
+
+                    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="0dp"
+                        android:paddingTop="20dp"
+                        android:visibility="gone">
+
+                        <RadioButton
+                            android:id="@+id/radio_ninjas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Online Payment"
+                            android:textColor="#555555"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_pirates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Cash On delivery"
+                            android:textColor="#555555"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/discount_layout"
+                        android:layout_marginTop="14dp">
+
+                        <!-- Coupons /HBMoney -->
+                        <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/segmented2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal"
+                            segmentedgroup:sc_border_width="2dp"
+                            segmentedgroup:sc_corner_radius="10dp">
+
+                            <RadioButton
+                                android:id="@+id/radio_repeat_discount"
+                                style="@style/RadioButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:onClick="tabClicked"
+                                android:text="Special offer"
+                               />
+
+                            <RadioButton
+                                android:id="@+id/radio_coupon"
+                                style="@style/RadioButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:onClick="tabClicked"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="Coupon" />
+
+                            <RadioButton
+                                android:id="@+id/radio_hbmoney"
+                                style="@style/RadioButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="tabClicked"
+                                android:text="HB Money" />
+
+
+
+                        </info.hoang8f.android.segmented.SegmentedGroup>
+
+                        <!-- Repeat order discount-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/repeat_order_discount_layout"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="5dp">
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:id="@+id/repeat_order_customer_addressing_text"
+                                    android:layout_width="247dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Welcome back Jack!"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center_vertical"
+                                    android:paddingLeft="10dp"/>
+
+
+                                <TextView
+                                    android:id="@+id/repeat_discount_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="You are a valuable customer.\nClick on the gift box for a surprise!"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="13sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:paddingLeft="10dp"
+                                    android:paddingBottom="20dp"
+                                    />
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="66dp"
+                                android:id="@+id/repeat_order_btn"
+                                android:src="@drawable/icon_gift"
+                                android:onClick="availRepeatOrderDiscount"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                />
+
+                        </LinearLayout>
+
+                        <!--Repeat order discount message-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/repeat_order_message_layout"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/repeat_order_message"
+                                android:text=""
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:paddingLeft="10dp"
+                                android:paddingBottom="20dp"
+                                android:paddingTop="20dp"
+
+                                />
+                        </LinearLayout>
+
+
+                        <!-- coupon layout -->
+                        <RelativeLayout
+                            android:id="@+id/coupon_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="20dp"
+                            android:visibility="gone">
+
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/coupon_edit_text"
+                                android:layout_width="190dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="10dp"
+                                android:hint="Coupon (if any) "
+                                android:textColorHint="#9b9b9b"
+                                app:met_floatingLabel="normal"
+                                />
+
+                            <Button
+                                android:id="@+id/coupon_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="16dp"
+                                android:onClick="couponApplyClicked"
+                                android:text="Apply"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+                        <!-- Use HB Money -->
+                        <CheckBox
+                            android:id="@+id/hbmoney_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:visibility="gone"
+                            android:onClick="hbmoneyChcekboxClicked"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/no_discount_cod_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text="Sorry, Coupons can't be applied with Cash on Delivery. Please use Online payment if you want to use coupons."
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:background="@android:color/darker_gray" />
+
+
+                    <LinearLayout
+                        android:id="@+id/price_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingTop="20dp"
+                        android:layout_weight="678.96">
+
+
+                        <!-- Total -->
+                        <LinearLayout
+                            android:id="@+id/total_price_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/total_price"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Total Price"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_weight="8" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="2"
+                                android:text="Rs."
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                />
+
+                            <TextView
+                                android:id="@+id/total_price_text"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="3"
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                android:inputType="number"
+                                android:text="0"/>
+
+                        </LinearLayout>
+
+
+                        <!-- Delivery charge -->
+                        <LinearLayout
+                            android:id="@+id/delivery_charge_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            >
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Delivery Charge"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_weight="8" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="2"
+                                android:text="Rs."
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                />
+
+                            <TextView
+                                android:id="@+id/delivery_charge_value"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="3"
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                android:inputType="number"
+                                android:text="0"/>
+                        </LinearLayout>
+
+                        <!-- Discount -->
+                        <LinearLayout
+                            android:id="@+id/discount_amount_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            >
+
+
+                            <TextView
+                                android:id="@+id/discount_price_label"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Discount"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_weight="8" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="2"
+                                android:text="Rs."
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                />
+
+                            <TextView
+                                android:id="@+id/discount_price_value"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="3"
+                                android:inputType="number"
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                android:text="0"/>
+                        </LinearLayout>
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/discount_detail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="( MYFIRSTORDER)"
+                                android:textSize="12sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>-->
+
+
+
+                        <!-- Delivery charge -->
+                        <LinearLayout
+                            android:id="@+id/final_price_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Final Price"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_weight="8" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="2"
+                                android:text="Rs."
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                />
+                            <TextView
+                                android:id="@+id/final_price_value"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+                                android:layout_alignParentTop="true"
+                                android:layout_weight="3"
+                                android:inputType="number"
+                                android:layout_gravity="top"
+                                android:gravity="right"
+                                android:text="0"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/disclaimer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/discount_price_text"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        android:visibility="visible"
+                        android:text=""
+                        android:textColor="#FF0000"
+                        android:gravity="center"
+                         />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:alpha="0.5"
+                    android:background="#ffffff" />
+
+            <!--Delivery time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="DELIVER"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="20dp"
+                    android:id="@+id/delivery_time_selection" >
+
+                    <RadioButton
+                        android:id="@+id/deliver_now"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:onClick="onDeliverNowClicked"
+                        android:text="Now"
+                        android:textColor="#555555"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        />`
+
+                    <RadioButton
+                        android:id="@+id/deliver_later"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="onDeliverLaterClicked"
+                        android:text="Later"
+                        android:textColor="#555555"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        />
+                </RadioGroup>
+
+
+
+            </LinearLayout>
+
+
+                <!-- Shipping Address -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="SHIPPING ADDRESS"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/landmarkEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Landmark (Optional)"
+                        app:met_floatingLabel="normal" />
+
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/addressEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="12dp"
+                        android:hint="Address"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:maxLines="5"
+                        android:minLines="2"
+                        app:met_floatingLabel="normal" />
+
+                </LinearLayout>
+
+
+                <!-- User Form details -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="YOUR DETAILS"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
+
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Name"
+                        android:textColorHint="#9b9b9b"
+                        app:met_floatingLabel="normal" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/mobileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Mobile No"
+                        android:inputType="phone"
+                        app:met_floatingLabel="normal" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Email"
+                        app:met_floatingLabel="normal" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/order_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="#4A90E2"
+            android:onClick="initiateOrderProcessing"
+            android:text="Place Your Order"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

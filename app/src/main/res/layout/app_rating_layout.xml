@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Like using Hungry Bells?"
+        android:textSize="20sp"
+        android:textColor="@color/color_white"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/app_rating_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <Button
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not really"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_hollow_btn_bg"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textAllCaps="false"
+            android:onClick="leftButtonClicked"/>
+
+        <Button
+            android:id="@+id/right_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes!"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/rounded_full_btn_bg"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:textAllCaps="false"
+            android:onClick="rightButtonClicked"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

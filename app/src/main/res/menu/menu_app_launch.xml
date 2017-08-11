@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".AppLaunchActivity">
+    <item
+        android:id="@+id/location"
+        android:icon="@drawable/location"
+        android:title="Location"
+        app:showAsAction="always" />
+</menu>

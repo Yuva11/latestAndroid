@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hungrybells.com.hungrybells_v20.Activity.activity.AboutActivity"
+    android:background="#fff">
+
+    <!-- Used Toolbar instead of ActionBar for more flexibility -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo_with_tm_new"/>
+
+        <TextView
+            android:id="@+id/app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4A4A4A"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"/>
+
+        <com.google.android.gms.plus.PlusOneButton
+            xmlns:plus="http://schemas.android.com/apk/lib/com.google.android.gms.plus"
+            android:id="@+id/plus_one_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            plus:size="standard"
+            plus:annotation="inline"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Contact Us"
+            android:textColor="#fff"
+            android:background="@color/orange_color"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="50dp"
+            android:onClick="contactUsBtnClicked"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Terms of service"
+            android:textColor="#4A4A4A"
+            android:background="@color/gray_color"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="tosBtnClicked"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Privacy Policy"
+            android:textColor="#4A4A4A"
+            android:background="@color/gray_color"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="privacyBtnClicked"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

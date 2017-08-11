@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:elevation="2dp"
+    android:background="@color/color_white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/deal_img_layout"
+            android:layout_width="match_parent"
+            android:layout_height="204dp"
+            android:layout_alignParentTop="true">
+
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/deal_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+
+            <!--
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/event_image"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:scaleType="fitXY"
+                />
+                -->
+
+            <LinearLayout
+                android:id="@+id/title_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/deal_image"
+                android:layout_centerHorizontal="true"
+                android:alpha="0.90"
+                android:background="@drawable/gradiant_black_to_transparent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/deal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="24dp"
+                    android:text="This is a Test deal"
+                    android:textColor="@color/color_white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/deal_merchant_and_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="Merchand and distance"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <!-- Layout to show like share view count -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@+id/deal_img_layout"
+            android:background="@color/accentColor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+
+                android:paddingLeft="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_like_count"
+                    android:layout_marginTop="11dp"/>
+
+                <TextView
+                    android:id="@+id/deal_like_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="22"
+                    android:textSize="14dp"
+                    android:paddingLeft="4dp"
+                    android:layout_marginTop="7dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_share_count"
+                    android:paddingLeft="16dp"
+                    android:layout_marginTop="11dp"/>
+                <TextView
+                    android:id="@+id/deal_share_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="22"
+                    android:textSize="14dp"
+                    android:paddingLeft="4dp"
+                    android:layout_marginTop="7dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_view_count"
+                    android:paddingLeft="14dp"
+                    android:layout_marginTop="11dp"/>
+                <TextView
+                    android:id="@+id/deal_view_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="22"
+                    android:textSize="14dp"
+                    android:paddingLeft="4dp"
+                    android:layout_marginTop="7dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+    <!-- Layout to show Price -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:paddingBottom="17dp"
+        android:id="@+id/relativeLayout"
+        >
+
+        <TextView
+            android:id="@+id/deal_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_price_deals_list"
+            android:text="RS 145"
+            android:paddingBottom="8dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="8dp"
+            android:textColor="@color/color_white" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

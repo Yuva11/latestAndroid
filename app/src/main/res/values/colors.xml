@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- action bar colors -->
+    <color name="colorPrimary">#DB4437</color>
+    <color name="colorPrimaryDark">#BA393A</color>
+
+    <color name="accentColor">#ffffff</color>
+
+    <color name="color_white">#ffffff</color>
+
+    <color name="tag_color">#313E50</color>
+
+    <color name="deal_price_color">#73BE00</color>
+    <color name="deal_list_page_bg_color">#D8D8D8</color>
+
+    <!-- Deal details -->
+    <color name="register_pressed">#2B63A4</color>
+    <color name="register_default">#3C80D0</color>
+
+    <!-- About Page -->
+    <color name="orange_color">#F5A623</color>
+    <color name="gray_color">#D8D8D8</color>
+
+    <!-- Colors for the material dialog -->
+    <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
+    <color name="material_indigo_500">#3F51B5</color>
+    <color name="material_indigo_600">#3949AB</color>
+    <color name="material_teal_500">#009688</color>
+    <color name="material_red_400">#EF5350</color>
+
+</resources>
